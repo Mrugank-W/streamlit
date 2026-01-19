@@ -1,97 +1,67 @@
-🔐 Privacy-Preserving Machine Learning using Homomorphic Encryption
+# Privacy-Preserving Machine Learning using TenSEAL
 
-This project demonstrates a privacy-preserving machine learning pipeline where model inference is performed directly on encrypted data using homomorphic encryption.
-The system ensures that sensitive user data remains encrypted throughout computation, addressing security and confidentiality concerns in ML systems.
+This project demonstrates a **privacy-preserving machine learning pipeline** where inference is performed directly on **encrypted data** using **homomorphic encryption**.  
+Sensitive input data remains encrypted throughout computation, ensuring confidentiality during machine learning inference.
 
-📖 Overview
+---
 
-Traditional machine learning systems require data to be decrypted before processing, exposing sensitive information.
-This project overcomes that limitation by integrating homomorphic encryption with machine learning, allowing computations to be performed on ciphertexts without revealing raw data.
+## Overview
 
-The implementation uses TenSEAL, a Python library built on Microsoft SEAL, to enable secure inference.
+Conventional machine learning systems require access to plaintext data, which poses privacy and security risks in sensitive domains.  
+This project addresses that issue by integrating **homomorphic encryption** with machine learning, enabling computations on encrypted inputs without revealing the original data.
 
-🧠 Key Concepts Used
+The implementation uses **TenSEAL**, a Python library built on Microsoft SEAL, to perform secure encrypted inference.
 
-Homomorphic Encryption (HE)
+---
 
-Secure Machine Learning Inference
+## Key Concepts
 
-Encrypted Vector Operations
+- Homomorphic Encryption  
+- Privacy-Preserving Machine Learning  
+- Encrypted Inference  
+- Secure Computation  
+- Accuracy vs Performance Trade-offs  
 
-Privacy-Preserving Computation
+---
 
-Trade-offs between Security and Performance
+## Tech Stack
 
-⚙️ Tech Stack
+- Language: Python  
+- Security Library: TenSEAL  
+- ML Libraries: NumPy, scikit-learn  
+- Encryption Scheme: CKKS  
+- Environment: Jupyter Notebook / Google Colab  
 
-Programming Language: Python
+---
 
-Security Library: TenSEAL
+## Workflow
 
-ML Framework: NumPy / scikit-learn
+1. Train a machine learning model on plaintext data  
+2. Encrypt input features using the CKKS scheme  
+3. Perform inference on encrypted inputs  
+4. Decrypt the encrypted output to obtain predictions  
+5. Ensure no plaintext data is exposed during computation  
 
-Encryption Scheme: CKKS (approximate homomorphic encryption)
+---
 
-Environment: Jupyter Notebook / Google Colab
+## Security Highlights
 
-🏗️ System Workflow
+- Input data remains encrypted at all stages  
+- Model never accesses raw user data  
+- Suitable for data-sensitive domains such as healthcare and finance  
+- Prevents data leakage during ML inference  
 
-Train a machine learning model on plaintext data
+---
 
-Encrypt input features using CKKS scheme
+## Performance Considerations
 
-Perform inference directly on encrypted inputs
+- Encrypted computation introduces computational overhead  
+- Slight numerical approximation due to CKKS encryption  
+- Demonstrates trade-offs between privacy, accuracy, and latency  
 
-Decrypt the encrypted output to obtain predictions
+---
 
-Ensure no plaintext data is exposed during computation
+## Installation
 
-🔒 Security Highlights
-
-Input data remains encrypted at all stages
-
-Model never accesses plaintext user inputs
-
-Suitable for data-sensitive domains such as healthcare, finance, and surveillance
-
-Prevents data leakage during ML inference
-
-📊 Performance Considerations
-
-Encrypted inference introduces computational overhead
-
-Accuracy may vary slightly due to approximate arithmetic
-
-Demonstrates practical trade-offs between privacy, accuracy, and latency
-
-🚀 How to Run
+```bash
 pip install tenseal numpy scikit-learn
-
-jupyter notebook
-
-
-Open the notebook file
-
-Run all cells sequentially
-
-Observe encrypted inference results and decrypted predictions
-
-📌 Use Cases
-
-Secure ML inference on sensitive data
-
-Privacy-preserving analytics
-
-Federated and encrypted ML pipelines
-
-Academic research in applied cryptography
-
-📈 Future Enhancements
-
-Support for deep learning models
-
-Integration with Flask APIs for secure inference services
-
-Performance optimization for large datasets
-
-Comparison with other privacy-preserving techniques
